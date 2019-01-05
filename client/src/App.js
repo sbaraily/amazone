@@ -15,14 +15,14 @@ const App = () => (
   <Fragment>
     <NavBar />
     <Switch>
-    <Route exact path='/' component={Home} />
-    <Route exact path='/departments/' component={Departments} />
-    <Route exact path='/departments/:id' component={Department} />
-    <Route exact path='/departments/:department_id/products/:id' component={Product} />
-    <Route exact path='/departments/:department_id/products/:product_id/reviews/:id' component={Review} />
-    <Route component={NoMatch} />
+      <Route exact path='/' component={Home} />
+      <Route exact path='/departments/' component={Departments} />
+      <Route exact path='/departments/:id' component={Department} />
+      <Route exact path='/departments/:department_id/products/:id' component={Product} />
+      <Route exact path='/departments/:department_id/products/:product_id/reviews/:id' component={Review} />
+      <Route component={NoMatch} />
     </Switch>
   </Fragment>
-);
+)
 
 export default App;

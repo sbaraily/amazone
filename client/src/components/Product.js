@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import RevForm from './RevForm'
 import { Link } from 'react-router-dom';
+import { Comment } from 'semantic-ui-react';
 
 
 class Product extends React.Component {
@@ -34,12 +35,19 @@ class Product extends React.Component {
     return this.state.reviews.map(r => {
         
       return (
-  
-        <ul key={r.id}>
-          <li>
-            <Link to={`${url}/reviews/${r.id}`}>{r.subject} || Stars:{r.stars}</Link>
-          </li>
-        </ul>
+        <Comment.Group>
+          <Comment key={r.id}>
+            <Comment.Avatar src='/images/avatar/small/matt.jpg' />
+            <Comment.Content>
+              <Comment.Header as='h3' dividing>
+                <Link to={`${url}/reviews/${r.id}`}>{r.subject}</Link>
+              </Comment.Header>
+              <Comment.Metadata>
+                {r.stars}
+              </Comment.Metadata>
+            </Comment.Content>
+          </Comment>
+      </Comment.Group>
       )
     })
   }

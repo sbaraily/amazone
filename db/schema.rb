@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_01_05_165030) do
     t.string "name"
     t.text "description"
     t.float "price"
-    t.boolean "stock"
+    t.integer "stock"
     t.bigint "department_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

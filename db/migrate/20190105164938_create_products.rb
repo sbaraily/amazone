@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :description
       t.float :price
-      t.boolean :stock
+      t.integer :stock
       t.belongs_to :department, foreign_key: true
 
       t.timestamps

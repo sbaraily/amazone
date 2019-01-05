@@ -1,14 +1,14 @@
 import React from 'react';
 
-class ProdForm extends React.Component {
-  defaultValues = { name: '', price: '', description: ''}
+class RevForm extends React.Component {
+  defaultValues = { subject: '', body: '', stars: '', date: ''}
   state = { ...this.defaultValues }
 
-  componentDidMount() {
-    if (this.props.id) {
-      this.setState({...this.props})
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.id) {
+  //     this.setState({...this.props})
+  //   }
+  // }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -23,34 +23,33 @@ class ProdForm extends React.Component {
   }
 
   render() {
-    const { name, description, price, stock } = this.state;
+    const { subject, body, stars, date } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <input
-          name="name"
-          placeholder="Name"
-          value={name}
+          name="subject"
+          placeholder="subject"
+          value={subject}
           onChange={this.handleChange}
           required
         /> <br/>
         <textarea
-          name="description"
-          placeholder="Description"
-          value={description}
+          name="body"
+          placeholder="Body"
+          value={body}
           onChange={this.handleChange}
         /> <br/>
         <input
-          name="price"
-          placeholder="Price"
+          name="stars"
+          placeholder="Stars"
           type="number"
-          value={price}
+          value={stars}
           onChange={this.handleChange}
         /> <br/>
         <input
-          name="stock"
-          placeholder="Stock"
-          value={stock}
-          type="number"
+          name="date"
+          placeholder="Date"
+          value={date}
           onChange={this.handleChange}
         /> 
         
@@ -60,4 +59,4 @@ class ProdForm extends React.Component {
   }
 }
 
-export default ProdForm;
+export default RevForm;

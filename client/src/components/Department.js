@@ -28,7 +28,7 @@ listProducts = () => {
     
           <ul key={p.id}>
             <li>
-              <Link to={`/products/${p.id}`}>{p.name}  : ${p.price}</Link>
+              <Link to={`/departments/${this.props.match.params.id}/products/${p.id}`}>{p.name}  : ${p.price}</Link>
 
             </li>
           </ul>

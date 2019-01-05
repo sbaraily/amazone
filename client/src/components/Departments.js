@@ -17,7 +17,7 @@ class Departments extends React.Component {
 
     submit = (department) => {
         axios.post('/api/departments', { department })
-      .then(res => {
+        .then(res => {
         this.setState({ departments: [...this.state.departments, res.data]})
       })
     }

@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import RevForm from './RevForm'
 import { Link } from 'react-router-dom';
+import {Container, Header, Button, Grid, Segment} from 'semantic-ui-react'
+
 
 
 class Product extends React.Component {
@@ -49,7 +51,10 @@ class Product extends React.Component {
     const { product: {name, description, price, stock} }  = this.state
 
     return (
-        <div>
+
+      <Container textAlign='center' style={{border:'1px dotted grey',
+      padding:'20px', margin:'10px', width: '50%', 
+      background:'linear-gradient(to bottom right, white 0%, offwhite 84%)'}}>
         <h1>{name}</h1>
         <h1>${price}</h1>
         <h3>{description}</h3>
@@ -59,7 +64,7 @@ class Product extends React.Component {
         {this.displayReviews()}
         <h2>Leave a Review</h2>
         <RevForm submit={this.submit} />
-        </div>
+        </Container>
     )
  
 }

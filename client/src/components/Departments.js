@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import DeptForm from './DeptForm'
+import {Container, Header, Button, Grid, Segment} from 'semantic-ui-react'
 
 
 class Departments extends React.Component {
@@ -25,32 +26,30 @@ class Departments extends React.Component {
     listDepartments = () => {
 
         return this.state.departments.map(d => {
-            
             return (
-        
-              <ul key={d.id}>
-                <li>
-                  <Link to={`/departments/${d.id}`}>{d.title}</Link>
-
-                </li>
-              </ul>
+            <Button inverted color='red' key={d.id}>
+                  <Link to={`/departments/${d.id}`}>{d.title}
+                  </Link>
+            </Button>
             )
           })
     }
 
-
-
-
     render() {
         return(
-            <div>
+          <Container textAlign='center' style={{border:'1px dotted grey', 
+      padding:'20px', margin:'10px', width: '50%', 
+      background:'linear-gradient(to bottom right, white 0%, offwhite 84%)'}}>
+        <Header as='h1'>Please Choose a Department</Header>
                 {this.listDepartments()}
-                <h2>Add Departments</h2>
+                <Header as='h3'>Add a Department</Header>
                 <DeptForm submit={this.submit} /> 
-            </div>
+            </Container>
                 
-        )
+        );
     }
+
+    
 }
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Header, Form } from 'semantic-ui-react';
 
 class RevForm extends React.Component {
   defaultValues = { subject: '', body: '', stars: '', date: ''}
@@ -25,36 +26,36 @@ class RevForm extends React.Component {
   render() {
     const { subject, body, stars, date } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Input
           name="subject"
           placeholder="subject"
           value={subject}
           onChange={this.handleChange}
           required
         /> <br/>
-        <textarea
+        <Form.TextArea
           name="body"
           placeholder="Body"
           value={body}
           onChange={this.handleChange}
         /> <br/>
-        <input
+        <Form.Input
           name="stars"
           placeholder="Stars"
           type="number"
           value={stars}
           onChange={this.handleChange}
         /> <br/>
-        <input
+        <Form.Input
           name="date"
           placeholder="Date"
           value={date}
           onChange={this.handleChange}
         /> 
         
-        <button>Submit</button>
-      </form>
+        <Form.Button>Submit</Form.Button>
+      </Form>
     )
   }
 }

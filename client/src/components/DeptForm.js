@@ -4,16 +4,22 @@ class DeptForm extends React.Component {
   defaultValues = { title: '' }
   state = { ...this.defaultValues }
 
-  componentDidMount() {
-    if (this.props.id) {
-      this.setState({...this.props})
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.id) {
+  //     this.setState({...this.props})
+  //   }
+  // }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const product = { ...this.state }
-    this.props.submit(product)
+    const title = { ...this.state }
+
+    if (this.props.id) {
+      this.props.editSubmit(title)
+    }
+    else {
+      this.props.submit(title)
+    }
     this.setState({ ...this.defaultValues })
   }
 

@@ -39,13 +39,12 @@ class Departments extends React.Component {
     }
 
 
-
-
     render() {
         return(
             <div>
+              <h1>Departments</h1>
                 {this.listDepartments()}
-                <h2>Add Departments</h2>
+                <h2>Add Department</h2>
                 <DeptForm submit={this.submit} /> 
             </div>
                 

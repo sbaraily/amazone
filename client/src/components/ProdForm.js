@@ -23,7 +23,7 @@ class ProdForm extends React.Component {
   }
 
   render() {
-    const { name, description, price } = this.state;
+    const { name, description, price, stock } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -46,12 +46,13 @@ class ProdForm extends React.Component {
           value={price}
           onChange={this.handleChange}
         /> <br/>
-        {/* <input
+        <input
           name="stock"
           placeholder="Stock"
           value={stock}
+          type="number"
           onChange={this.handleChange}
-        />  */}
+        /> 
         
         <button>Submit</button>
       </form>

@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  namespace :api do
-    
+  namespace :api do  
     resources :departments do
-      resources :products
+      resources :products do 
+        resources :reviews
+      end
     end
-
-    resources :products do
-      resources :reviews      
-    end
-
   end
 end
